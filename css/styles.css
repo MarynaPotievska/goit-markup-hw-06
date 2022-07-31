@@ -152,7 +152,7 @@ header {
 
 .header-contact-link:hover,
 .header-contact-link:focus {
-  color: var(--cl-accent);
+  color: #188ce8;
 }
 
 .contact-icon {
@@ -225,19 +225,6 @@ header {
 
 .preferences {
   padding-bottom: 0;
-}
-
-.visually-hidden {
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  margin: -1px;
 }
 
 .preferences-list {
@@ -632,6 +619,46 @@ header {
   color: var(--bg-cl-main);
 }
 
+.subscribe-form-field {
+  width: 358px;
+  height: 50px;
+  margin-right: 12px;
+  padding-left: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  outline: transparent;
+  background-color: transparent;
+  color: var(--font-cl-accent);
+}
+
+.subscribe-form-field::placeholder {
+  font-style: 16px;
+  line-height: calc(20 / 16);
+  letter-spacing: var(--lttr-spc-base);
+}
+
+.subscribe-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 28px;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  background-color: var(--cl-accent);
+}
+
+.subscribe-btn-text {
+  display: inline-block;
+  font-weight: 700;
+  font-style: 16px;
+  line-height: calc(30 / 16);
+  letter-spacing: var(--lttr-spc-title);
+  color: var(--font-cl-accent);
+}
+
 .backdrop {
   position: fixed;
   top: 0;
@@ -655,7 +682,6 @@ header {
   top: 50%;
   left: 50%;
   width: 528px;
-  height: 581px;
   background-color: var(--bg-cl-main);
   visibility: inherit;
   opacity: 1;
@@ -681,5 +707,171 @@ header {
   background-color: var(--bg-cl-main);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
+  outline: transparent;
   cursor: pointer;
+}
+
+.modal-btn:hover .application-close-btn-icon,
+.modal-btn:focus .application-close-btn-icon {
+  fill: var(--cl-accent);
+}
+
+.application-form {
+  padding: 40px 39px 40px 41px;
+}
+
+.application-form-desc {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 20px;
+  line-height: calc(23 / 20);
+  text-align: center;
+  letter-spacing: var(--lttr-spc-base);
+  color: var(--font-cl-main);
+}
+
+.application-form-group {
+  margin-bottom: 20px;
+}
+
+.application-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.application-item:last-child {
+  margin-bottom: 0;
+}
+
+.application-item-name,
+.application-comment-field::placeholder {
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  letter-spacing: 0.01em;
+  color: var(--font-cl-secondary);
+}
+
+.application-item-icon {
+  position: absolute;
+  bottom: 11px;
+  left: 12px;
+  width: 18px;
+  height: 18px;
+  transition: fill var(--trans-actions);
+}
+
+.application-item:hover .application-item-icon,
+.application-item:focus .application-item-icon {
+  fill: var(--cl-accent);
+}
+
+.application-field {
+  height: 40px;
+  padding-left: 42px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  color: var(--font-cl-main);
+  outline: transparent;
+  cursor: pointer;
+  transition: border-color var(--trans-actions);
+}
+
+.application-item:hover .application-field {
+  border-color: var(--cl-accent);
+}
+
+.comment {
+  padding: 12px 16px;
+  height: 120px;
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  resize: none;
+}
+
+.comment::placeholder {
+  margin-bottom: 0;
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.checkbox {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8.38px;
+  margin-bottom: 30px;
+}
+
+.application-checkbox-name {
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: calc(24 / 14);
+  letter-spacing: var(--lttr-spc-base);
+  font-size: 14px;
+  line-height: calc(24 / 14);
+  user-select: none;
+}
+
+.application-checkbox-icon {
+  width: 16px;
+  height: 15px;
+}
+
+.application-condions-agreement:checked
+  + .application-checkbox-icon
+  .application-checkbox-icon-empty {
+  opacity: 0;
+  transition: opacity var(--trans-actions);
+}
+
+.application-checkbox-icon-checked {
+  opacity: 0;
+  transition: opacity var(--trans-actions);
+}
+
+.application-condions-agreement:checked
+  + .application-checkbox-icon
+  .application-checkbox-icon-checked {
+  opacity: 1;
+}
+
+.agreement-link {
+  color: var(--cl-accent);
+}
+
+.application-submit-btn {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  padding: 10px 52px;
+  border: none;
+  background: #188ce8;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: calc(30 / 16);
+  letter-spacing: var(--lttr-spc-title);
+  color: var(--font-cl-accent);
+}
+
+.application-submit-btn:hover,
+.application-submit-btn:focus {
+  background-color: #188ce8;
+}
+
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
 }
